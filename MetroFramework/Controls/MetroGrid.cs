@@ -293,6 +293,7 @@ namespace MetroFramework.Controls
             _grid.UserDeletedRow += new DataGridViewRowEventHandler(_grid_UserDeletedRow);
             _grid.Scroll += new ScrollEventHandler(_grid_Scroll);
             _grid.Resize += new EventHandler(_grid_Resize);
+            _grid.DataBindingComplete += new DataGridViewBindingCompleteEventHandler(_grid_DataBindingComplete);
             _scrollbar.Scroll += _scrollbar_Scroll;
             _scrollbar.ScrollbarSize = 17;
 
@@ -407,10 +408,10 @@ namespace MetroFramework.Controls
                     _scrollbar.SmallChange = 1;
                     _scrollbar.LargeChange = Math.Max(1, visibleRows - 1);
                     _scrollbar.Value = _grid.FirstDisplayedScrollingRowIndex;
-                    if (_grid.RowCount > 0 && _grid.Rows[_grid.RowCount - 1].Cells[0].Displayed)
-                    {
-                        _scrollbar.Value =  _grid.RowCount;
-                    }
+                    //if (_grid.RowCount > 0 && _grid.Rows[_grid.RowCount - 1].Cells[0].Displayed)
+                    //{
+                    //    _scrollbar.Value = _grid.RowCount;
+                    //}
                     _scrollbar.Location = new Point(_grid.Width - _scrollbar.ScrollbarSize, 0);
                     _scrollbar.Height = _grid.Height - (hScrollbar.Visible ? _scrollbar.ScrollbarSize : 0);
                     _scrollbar.BringToFront();
@@ -468,6 +469,11 @@ namespace MetroFramework.Controls
         #region Events of interest
 
         void _grid_Resize(object sender, EventArgs e)
+        {
+            UpdateScrollbar();
+        }
+
+        void _grid_DataBindingComplete(object sender, EventArgs e)
         {
             UpdateScrollbar();
         }
