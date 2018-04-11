@@ -98,7 +98,12 @@ namespace MetroFramework.Controls
 
                 return metroStyle;
             }
-            set { metroStyle = value; }
+            set
+            {
+                metroStyle = value;
+                if (DesignMode)
+                    Invalidate();
+            }
         }
 
         private MetroThemeStyle metroTheme = MetroThemeStyle.Default;
@@ -124,7 +129,12 @@ namespace MetroFramework.Controls
 
                 return metroTheme;
             }
-            set { metroTheme = value; }
+            set
+            {
+                metroTheme = value;
+                if (DesignMode)
+                    Invalidate();
+            }
         }
 
         private MetroStyleManager metroStyleManager = null;

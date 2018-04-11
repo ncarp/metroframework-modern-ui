@@ -743,6 +743,7 @@ namespace MetroFramework.Controls
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
+            Invalidate();
             UpdateBaseTextBox();
         }
 

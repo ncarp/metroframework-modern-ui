@@ -630,20 +630,36 @@ namespace MetroFramework.Drawing
 
             public sealed class ComboBox
             {
+                //public static Color Normal(MetroThemeStyle theme)
+                //{
+                //    if (theme == MetroThemeStyle.Dark)
+                //        return Color.FromArgb(153, 153, 153);
+
+                //    return Color.FromArgb(153, 153, 153);
+                //}
+
                 public static Color Normal(MetroThemeStyle theme)
-                {
-                    if (theme == MetroThemeStyle.Dark)
-                        return Color.FromArgb(153, 153, 153);
-
-                    return Color.FromArgb(153, 153, 153);
-                }
-
-                public static Color Hover(MetroThemeStyle theme)
                 {
                     if (theme == MetroThemeStyle.Dark)
                         return Color.FromArgb(170, 170, 170);
 
                     return Color.FromArgb(17, 17, 17);
+                }
+
+                //public static Color Hover(MetroThemeStyle theme)
+                //{
+                //    if (theme == MetroThemeStyle.Dark)
+                //        return Color.FromArgb(170, 170, 170);
+
+                //    return Color.FromArgb(17, 17, 17);
+                //}
+
+                public static Color Hover(MetroThemeStyle theme)
+                {
+                    if (theme == MetroThemeStyle.Dark)
+                        return Color.FromArgb(153, 153, 153);
+
+                    return Color.FromArgb(153, 153, 153);
                 }
 
                 public static Color Press(MetroThemeStyle theme)
