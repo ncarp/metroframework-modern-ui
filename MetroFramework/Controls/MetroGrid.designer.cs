@@ -45,6 +45,7 @@
             this._horizontal.ScrollbarSize = 50;
             this._horizontal.Size = new System.Drawing.Size(200, 50);
             this._horizontal.TabIndex = 0;
+            this._horizontal.TabStop = false;
             this._horizontal.UseSelectable = true;
             // 
             // _vertical
@@ -59,6 +60,7 @@
             this._vertical.ScrollbarSize = 50;
             this._vertical.Size = new System.Drawing.Size(50, 200);
             this._vertical.TabIndex = 0;
+            this._vertical.TabStop = false;
             this._vertical.UseSelectable = true;
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);

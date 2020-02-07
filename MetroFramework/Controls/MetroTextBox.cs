@@ -498,6 +498,14 @@ namespace MetroFramework.Controls
             set { baseTextBox.ShortcutsEnabled = value; }
         }
 
+        public override bool Focused
+        {
+            get
+            {
+                return baseTextBox.Focused;
+            }
+        }
+
         #endregion
 
         #region Constructor
@@ -740,6 +748,15 @@ namespace MetroFramework.Controls
             UpdateBaseTextBox();
         }
 
+        // To set focus on internal Textbox.
+        // Thanks to Ivan-Mark Debono on 
+        // https://stackoverflow.com/questions/28338207/how-to-set-focus-on-a-control-within-a-custom-control
+        protected override void OnEnter(EventArgs e)
+        {
+            base.OnEnter(e);
+            baseTextBox.Select();
+        }
+
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
@@ -771,6 +788,7 @@ namespace MetroFramework.Controls
             Size = new Size(baseTextBox.Width + 6, baseTextBox.Height + 6);
 
             baseTextBox.TabStop = true;
+            baseTextBox.TabIndex = 0;
             //baseTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom | AnchorStyles.Right;
 
             Controls.Add(baseTextBox);

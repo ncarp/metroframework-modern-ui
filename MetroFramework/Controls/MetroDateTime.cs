@@ -463,7 +463,8 @@ namespace MetroFramework.Controls
                 string measureText = Text.Length > 0 ? Text : "MeasureText";
                 proposedSize = new Size(int.MaxValue, int.MaxValue);
                 preferredSize = TextRenderer.MeasureText(g, measureText, MetroFonts.DateTime(metroDateTimeSize, metroDateTimeWeight), proposedSize, TextFormatFlags.Left | TextFormatFlags.LeftAndRightPadding | TextFormatFlags.VerticalCenter);
-                preferredSize.Height += 10;
+                //preferredSize.Height += 10;
+                preferredSize.Height += 6;
             }
 
             return preferredSize;

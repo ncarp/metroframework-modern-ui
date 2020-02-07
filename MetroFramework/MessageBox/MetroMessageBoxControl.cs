@@ -224,19 +224,22 @@ namespace MetroFramework
                 case MessageBoxDefaultButton.Button1:
                     if (metroButton1 != null)
                     {
-                        if (metroButton1.Enabled) metroButton1.Focus();
+                        //if (metroButton1.Enabled) metroButton1.Focus();
+                        if (metroButton1.Enabled) ActiveControl=metroButton1;
                     }
                     break;
                 case MessageBoxDefaultButton.Button2:
                     if (metroButton2 != null)
                     {
-                        if (metroButton2.Enabled) metroButton2.Focus();
+                        //if (metroButton2.Enabled) metroButton2.Focus();
+                        if (metroButton2.Enabled) ActiveControl = metroButton1;
                     }
                     break;
                 case MessageBoxDefaultButton.Button3:
                     if (metroButton3 != null)
                     {
-                        if (metroButton3.Enabled) metroButton3.Focus();
+                        //if (metroButton3.Enabled) metroButton3.Focus();
+                        if (metroButton3.Enabled) ActiveControl = metroButton1;
                     }
                     break;  
                 default: break;
